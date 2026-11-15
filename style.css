@@ -81,3 +81,18 @@
     height: 150px;
   }
 }
+@media (min-width: 681px) {
+  .service-card:nth-child(4),
+  .service-card-wide {
+    grid-column: span 3;
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 680px) {
+  .service-card:nth-child(4),
+  .service-card-wide {
+    grid-column: auto;
+    min-height: 0;
+  }
+}
