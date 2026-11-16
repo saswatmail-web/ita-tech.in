@@ -45,13 +45,6 @@
   font: 700 clamp(23px, 2.5vw, 31px)/1.18 var(--display);
   letter-spacing: -1px;
 }
-.hero-photo-panel .photo-credit {
-  display: block;
-  margin-top: 14px;
-  color: #d2dce5;
-  font-size: 9px;
-  letter-spacing: .2px;
-}
 .industry-section {
   padding: 96px 0 104px;
   background: #fff;
@@ -141,4 +134,56 @@
   .industry-card:last-child { grid-column: auto; }
   .industry-card > img { height: 210px; }
   .industry-copy p { min-height: 0; }
+}
+
+
+/* Responsive refinement: keep the navigation comfortable on tablets and phones. */
+@media (max-width: 860px) {
+  .site-header { height: 76px; }
+  .nav-wrap { gap: 16px; }
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--navy);
+  }
+  .primary-nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    z-index: 12;
+    padding: 18px 24px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    background: #fff;
+    border-bottom: 1px solid #dfe6eb;
+    box-shadow: 0 12px 22px #14283d12;
+  }
+  .primary-nav.open { display: flex; }
+  .primary-nav a { padding: 8px 0; font-size: 13px; }
+  .primary-nav .nav-cta { padding: 12px 15px; text-align: center; }
+}
+
+@media (max-width: 680px) {
+  .site-header { height: 70px; }
+  .primary-nav { top: 70px; }
+  .hero h1 { font-size: clamp(38px, 9vw, 44px); line-height: 1.12; }
+  .hero-photo-panel { height: 300px; }
+  .industry-card > img { height: 210px; }
 }
